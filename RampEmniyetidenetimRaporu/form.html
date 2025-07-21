@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramp Emniyeti Denetim Raporu</title>
+    <link rel="stylesheet" href="form.css">
+    <img src="turkish.jpg" alt=" Turkish Airlines Logo" style="width: 280px;
+    height: auto; display: block; margin: 0 auto;">
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
+
+</head>
+<body> 
+
+    <div class="container">
+
+        <h1>Ramp Emniyeti Denetim Raporu</h1>
+
+        <form class="header-form">
+            <div class="form-group"> 
+            <div class="form-group-child">
+                <label for="SürücüName">Sürücü:</label>
+                <input type="text" id="SürücüName" name="SürücüName" required>
+            </div>
+
+            <div class="form-group-child">
+                <label for="date">Tarih:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group-child">
+                <label for="time">Saat:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <div class="form-group-child">
+                <label for="AracNo">Araç No:</label>
+                <input type="number" id="AracNo" name="AracNo" required>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="form-group-child">
+                <label for="PersonelName">Yardımcı Personel:</label>
+                <input type="text" id="PersonelName" name="PersonelName" required>
+            </div>
+
+            <div class="form-group-child">
+                <label for="UcusNo">Uçuş No:</label>
+                <input type="number" id="UcusNo" name="UcusNo" required>
+            </div>
+
+            <div class="form-group-child">
+                <label for="ParkPozisyonu">Park Pozisyonu:</label>
+                <input type="text" id="ParkPozisyonu" name="ParkPozisyonu" required>    
+            </div>
+
+            <div class="form-group-child">
+                <label for="KuyrukNo">Kuyruk No:</label>
+                <input type="number" id="KuyrukNo" name="KuyrukNo" required>
+            </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-child">
+                    <label for="KontrolEden">Kontrol Eden:</label>  
+                    <input type="text" id="KontrolEden" name="KontrolEden" required>
+                </div>
+
+            <div class="checkbox-group">
+                <label for="galley">Galley B/C</label>
+                <input type="checkbox" id="galley" />
+            </div>
+            <div class="checkbox-group">
+                <label for="orta">ORTA</label>
+                <input type="checkbox" id="orta" />
+            </div>
+            <div class="checkbox-group">
+                <label for="kapı1">Y/C Kapı 1</label>
+                <input type="checkbox" id="kapı1" />
+            </div>
+            <div class="checkbox-group">
+                <label for="kapı2">Y/C Kapı 2</label>
+                <input type="checkbox" id="kapı2" />
+            </div>
+
+
+            </form>
+
+        <!-- Mesajın buraya gelsin -->
+        <p id="message"></p>
+
+        <script src="form.js"></script>
+            
+    </div>    
+
+    <div style="width: 90%;justify-self: center;">
+        <table border="1">
+            <th>ARAÇ KONTROLÜ</th>
+            <th>Evet</th>
+            <th>Hayır</th>
+            <th> Açıklama</th>
+            <th>Puan</th>
+            </tr>
+
+            <tr>
+                <td>1. Personel görev formundaki sefer numarası ile araç içerisindeki ikramların sefer numarası kontrolünü yaptı mı?</td>
+                <td><input type="radio" name="q1" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan1')"></td>
+                <td><input type="radio" name="q1" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan1')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan1" name="puan1" readonly></td>
+            </tr>
+
+            <tr>
+                <td>2. Yüklemeye çıkacak kamyonda yan ve arka kapı sealları takılı mı? Araç içindeki troley ve ekipmanlar sabitlenmiş mi? İp ile bağlanmış mı?</td>
+                <td><input type="radio" name="q2" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan2')"></td>
+                <td><input type="radio" name="q2" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan2')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan2" name="puan2" readonly></td>
+            </tr>
+
+            <tr>
+                <td>3. Personel ikram kamyonu harekete başlamadan önce gerekli fiziki kontrolleri yapıyor mu? (Lastikler, yağ kaçağı, fren kontrolü, göstergeler, apron plakası, araç tanıtım kartıyakıt kontrolü, araç temizliği, yangın tüpü, tepe lambası vs.)</td>
+                <td><input type="radio" name="q3" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan3')"></td>
+                <td><input type="radio" name="q3" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan3')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan3" name="puan3" readonly></td>
+            </tr>
+
+
+            <tr>
+            <th>SÜRÜŞ KURALLARI</th>
+            <th>Evet</th>
+            <th>Hayır</th>
+            <th> Açıklama</th>
+            <th>Puan</th>
+            </tr>
+
+            <tr>
+                <td>4. Personel sürüş esnasında emniyet kemerini taktı mı?</td>
+                <td>
+                    <input type="radio" name="q4" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan4')">
+                </td>
+                <td>
+                    <input type="radio" name="q4" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan4')">
+                </td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan4" name="puan4" readonly></td>
+            </tr>
+
+            <tr>
+            <td>5. Personel koruyucu ekipmanlarını kullanıyor mu? (yelek, kulaklık, koruyucu ayakkabı)</td>
+            <td><input type="radio" name="q5" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan5')"></td>
+            <td><input type="radio" name="q5" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan5')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan5" name="puan5" readonly></td>
+            </tr>
+
+            <tr>
+                <td>6. Sürüş esnasında telefon kullanıldı mı?</td>
+                <td><input type="radio" name="q6" value="evet" data-puan="4" onchange="puanHesapla(this, 'puan6')"></td>
+                <td><input type="radio" name="q6" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan6')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan6" name="puan6" readonly></td>
+            </tr>
+
+            <tr>
+            <td>7. Apronda hız limitine uygun araç kullanıyor mu? (Araç servis yolu 30km/h, Çevre Yolu 50km/h, Düşük Görüş Operasyonu 50km/h)</td>
+            <td><input type="radio" name="q7" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan7')"></td>
+            <td><input type="radio" name="q7" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan7')"></td>
+            <td><input type="text" id="Textarea" name="Textarea"></td>
+            <td><input type="number" id="puan7" name="puan7" readonly></td>
+            </tr>
+
+            <tr>
+            <td>8. Personel alçak tavan yükseklik (3.10mt) levhası bulunan yerlerden geçti mi?</td>
+            <td><input type="radio" name="q8" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan8')"></td>
+            <td><input type="radio" name="q8" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan8')"></td>
+            <td><input type="text" id="Textarea" name="Textarea"></td>
+            <td><input type="number" id="puan8" name="puan8" readonly></td>
+            </tr>
+
+            <tr>
+            <td>9. Apronda beyaz çizgilerle belirlenen "araç servis yolu"na uygun araç kullandı mı?</td>
+            <td><input type="radio" name="q9" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan9')"></td>
+            <td><input type="radio" name="q9" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan9')"></td>
+            <td><input type="text" id="Textarea" name="Textarea"></td>
+            <td><input type="number" id="puan9" name="puan9" readonly></td>
+            </tr>
+
+            <tr>
+            <td>10. Personel, Taxi yolundan kurallara uygun olarak geçiş yaptı mı? </td>
+            <td><input type="radio" name="q10" value="evet" data-puan="4" onchange="puanHesapla(this, 'puan10')"></td>
+            <td><input type="radio" name="q10" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan10')"></td>
+            <td><input type="text" id="Textarea" name="Textarea"></td>
+            <td><input type="number" id="puan10" name="puan10" readonly></td>
+            </tr>
+
+            <tr>
+                <td>11. Aprondaki DUR yazan levha ve işaretlerin bulunduğu alanda durdu mu? </td>
+                <td><input type="radio" name="q11" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan11')"></td>
+                <td><input type="radio" name="q11" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan11')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan11" name="puan11" readonly></td>
+            </tr>
+
+            <tr>
+                <td>12. İki uçak arası geçişlerde uçak kanat kontrolü yaptı mı?</td>
+                <td><input type="radio" name="q12" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan12')"></td>
+                <td><input type="radio" name="q12" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan12')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan12" name="puan12" readonly></td>
+            </tr>
+
+            <tr>
+                <td>13. Personel kırmızı taralı alanlarda park etme veya geçiş yaptı mı?</td>
+                <td><input type="radio" name="q13" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan13')"></td>
+                <td><input type="radio" name="q13" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan13')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan13" name="puan13" readonly></td>
+            </tr>
+
+            <tr>
+                <td>14. Mars pozisyonunda bekleme ya da parklama yapıldı mı?</td>
+                <td><input type="radio" name="q14" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan14')"></td>
+                <td><input type="radio" name="q14" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan14')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan14" name="puan14" readonly></td>
+            </tr>
+
+            <tr>
+            <th>UÇAĞA YANAŞMA</th>
+            <th>Evet</th>
+            <th>Hayır</th>
+            <th> Açıklama</th>
+            <th>Puan</th>
+            </tr>
+
+            <tr>
+                <td>15. Personel uçak beklerken park yeri kurallarına uygun hareket ediyor mu?</td>
+                <td><input type="radio" name="q15" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan15')"></td>
+                <td><input type="radio" name="q15" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan15')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan15" name="puan15" readonly></td>
+            </tr>
+
+            <tr>
+                <td>16. Personel, araç ile uçak altına girmeden önce motorları durmuş, motor ikaz lambaları sönmüş ve tüm takozların konulmuş muydu?</td>
+                <td><input type="radio" name="q16" value="evet" data-puan="4" onchange="puanHesapla(this, 'puan16')"></td>
+                <td><input type="radio" name="q16" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan16')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan16" name="puan16" readonly></td>
+            </tr>
+
+
+            <tr>
+                <td>17. Uçak altı manevralarda uçağın solunda kalması, aracın yürüyüş hızıda kullanılması ve fren kontrolü yapma kuralına uygun davranıyor mu? </td>
+                <td><input type="radio" name="q17" value="evet" data-puan="4" onchange="puanHesapla(this, 'puan17')"></td>
+                <td><input type="radio" name="q17" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan17')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan17" name="puan17" readonly></td>
+            </tr>
+
+            <tr>
+                <td>18. Uçağa yanaşma ya da ayrılma esnasında kanal altından geçti mi?</td>
+                <td><input type="radio" name="q18" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan18')"></td>
+                <td><input type="radio" name="q18" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan18')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan18" name="puan18" readonly></td>
+            </tr>
+
+            <tr>
+                <td>19. Uçağa yanaşma esnasında kapının kavisi hesaplanarak uçak kapısına uygun şekilde yanaşıldı mı?</td>
+                <td><input type="radio" name="q19" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan19')"></td>
+                <td><input type="radio" name="q19" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan19')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan19" name="puan19" readonly></td>
+            </tr>
+
+            <tr>
+                <td>20. Ön platform ile uçağın kapısı arasında güvenli mesafe bıraktı mı?</td>
+                <td><input type="radio" name="q20" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan20')"></td>
+                <td><input type="radio" name="q20" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan20')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan20" name="puan20" readonly></td>
+            </tr>
+
+            <tr>
+                <td>21. Personel aracın ayaklarını  basıp, araç ve FOD kontrollerini yaptı mı?</td>
+                <td><input type="radio" name="q21" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan21')"></td>
+                <td><input type="radio" name="q21" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan21')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan21" name="puan21" readonly></td>
+            </tr>
+
+            <tr>
+                <td>22. Kamyonun ön sahanlığının uçak kapısının altına gelmeyecek şekilde yanaştı mı?</td>
+                <td><input type="radio" name="q22" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan22')"></td>
+                <td><input type="radio" name="q22" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan22')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan22" name="puan22" readonly></td>
+            </tr>
+
+            <tr>
+                <td>23. Uçak kapısı çalınıp, kapının açılması için uygunluk işareti verildi mi?</td>
+                <td><input type="radio" name="q23" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan23')"></td>
+                <td><input type="radio" name="q23" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan23')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan23" name="puan23" readonly></td>
+            </tr>
+
+            <tr>
+            <th>İKRAM YÜKLEME</th>
+            <th>Evet</th>
+            <th>Hayır</th>
+            <th> Açıklama</th>
+            <th>Puan</th>
+            </tr>
+
+            <tr>
+                <td>24. Platform yüksekliği uçak kapısına uygun ayarlandı mı?</td>
+                <td><input type="radio" name="q24" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan24')"></td>
+                <td><input type="radio" name="q24" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan24')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan24" name="puan24" readonly></td>
+            </tr>
+
+            <tr>
+                <td>25. H/L köprüsünü kapı eşiğindeki metal kısım ve aparatlara değmeyecek şekilde uçak içi zemine yavaşça bırakıp ve köprü bariyerlerini açtı mı?</td>
+                <td><input type="radio" name="q25" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan25')"></td>
+                <td><input type="radio" name="q25" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan25')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan25" name="puan25" readonly></td>
+            </tr>
+
+            <tr>
+                <td>26. H/L köprüsü uçağa konulduktan sonra H/L platformu aşağı-yukarı ya da sağa-sola hareket ettirildi mi?</td>
+                <td><input type="radio" name="q26" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan26')"></td>
+                <td><input type="radio" name="q26" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan26')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan26" name="puan26" readonly></td>
+            </tr>
+
+            <tr>
+                <td>27. Yükleme ya da boşaltma esnasında trolley üzerinde ünit taşındı mı?</td>
+                <td><input type="radio" name="q27" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan27')"></td>
+                <td><input type="radio" name="q27" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan27')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan27" name="puan27" readonly></td>
+            </tr>
+
+            <tr>
+                <td>28. İkram yüklemesi yükleme planlarına ve pozisyon numaralarına uygun olarak yapıldı mı?</td>
+                <td><input type="radio" name="q28" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan28')"></td>
+                <td><input type="radio" name="q28" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan28')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan28" name="puan28" readonly></td>
+            </tr>
+
+            <tr>
+                <td>29. Yükleme tamamlandıktan sonra boşaltılan ikramların kontolü ve sabitlemesi (bağlanması ve trolley sıkıştırma mekanizması kapatılması) yapıldı mı?</td>
+                <td><input type="radio" name="q29" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan29')"></td>
+                <td><input type="radio" name="q29" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan29')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan29" name="puan29" readonly></td>
+            </tr>
+
+            <tr>
+                <td>30. Uçak kapısının kapatılması için kabin ekibi ya da yetkisi olan personel ile iletişim kuruldu mu?</td>
+                <td><input type="radio" name="q30" value="evet" data-puan="2" onchange="puanHesapla(this, 'puan30')"></td>
+                <td><input type="radio" name="q30" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan30')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan30" name="puan30" readonly></td>
+            </tr>
+
+            <tr>
+            <th>UÇAKTAN AYRILMA </th>
+            <th>Evet</th>
+            <th>Hayır</th>
+            <th> Açıklama</th>
+            <th>Puan</th>
+            </tr>
+
+
+            <tr>
+                <td>31. H/L köprüsü uçaktan alınmadan önce emniyet bandı takıldı mı?</td>
+                <td><input type="radio" name="q31" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan31')"></td>
+                <td><input type="radio" name="q31" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan31')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan31" name="puan31" readonly></td>
+            </tr>
+
+            <tr>
+                <td>32. Köprü korkulukları kapatılıp, köprü yerine sabitlendi mi?</td>
+                <td><input type="radio" name="q32" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan32')"></td>
+                <td><input type="radio" name="q32" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan32')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan32" name="puan32" readonly></td>
+            </tr>
+
+            <tr>
+                <td>33. H/L kasası indirilmeden önce aracın etrafı kontrol edildi mi? Kasa indirmeye engel araç ya da malzeme var ise çekilmesi için uyarı yapıldı mı?</td>
+                <td><input type="radio" name="q33" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan33')"></td>
+                <td><input type="radio" name="q33" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan33')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan33" name="puan33" readonly></td>
+            </tr>
+
+            <tr>
+                <td>34. H/L ayakları toplanıp, araç ve FOD kontrolü yapıldı mı?</td>
+                <td><input type="radio" name="q34" value="evet" data-puan="3" onchange="puanHesapla(this, 'puan34')"></td>
+                <td><input type="radio" name="q34" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan34')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan34" name="puan34" readonly></td>
+            </tr>
+
+            <tr>
+                <td>35. Geri manevra yaparken marshalling yapıldı mı? Marshaller komutlarını doğru verdi mi?</td>
+                <td><input type="radio" name="q35" value="evet" data-puan="4" onchange="puanHesapla(this, 'puan35')"></td>
+                <td><input type="radio" name="q35" value="hayir" data-puan="0" onchange="puanHesapla(this, 'puan35')"></td>
+                <td><input type="text" id="Textarea" name="Textarea"></td>
+                <td><input type="number" id="puan35" name="puan35" readonly></td>
+            </tr>
+
+
+            <tr>
+            <th>GÖZLEM RAPOR SONUCU </th>
+            <th>Evet</th>
+            <th>Hayır</th>
+            <th colspan="2"> Açıklama</th>
+            </tr>
+
+            <tr>
+                <td>Gözlem rapor sonucu uygun mu?</td>
+                <td><input type="radio" name="q36" value="evet"></td>
+                <td><input type="radio" name="q36" value="hayir"></td>
+                <td colspan="2"><input type="text" id="Textarea" name="Textarea"></td>
+            </tr>
+
+        </table>
+        
+    </div>
+
+    <div>
+        <p>
+            Ramp Emniyeti gözlem raporunda başarısız olan personele Ramp Emniyeti ve Apon Kuralları Tazeleme Eğitimi verilir.
+        </p>
+    </div>
+
+
+    <div style="font-size: 20px;">
+        <h3 style="color: rgb(56, 62, 105);">Gözlemci Yorumu :</h3>
+        <textarea id="observationNotes" name="observationNotes" rows="4" cols="40"></textarea>
+    </div>
+
+
+
+    <div class="form-group" style="background-color: hsla(0, 0%, 0%, 0.435);">
+        <div class="form-group-child">
+            <label for="KontrolYapanAdı">Kontrol Yapan:</label>
+            <input type="text" id="KontrolYapanAdı" name="KontrolYapanAdı">
+        </div>
+        <div class="form-group-child">
+            <label for="Tarih">Tarih:</label>
+            <input type="date" id="Tarih" name="Tarih">
+        </div>
+    </div>
+    <form id="myForm">
+        <div style="margin:30px 0; text-align:center;">
+            <span style="font-size:2.5rem; color:#2e6f31; font-weight:bold;">
+                Toplam Puan: <span id="toplamPuanGoster">0</span>
+            </span>
+            <input type="hidden" id="toplamPuan" name="toplamPuan">
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <input type="submit" value="Gönder" onclick="formGonder(event)"><br>
+
+        </div>
+    </form>
+    <script src="form.js"></script>
+    
+
+    <div class="footer">
+        <p style="color: #444343cb;">&copy; 2025 TURKISH DO&CO . Tüm hakları saklıdır.</p>
+   </div>
+
+</body>
+</html>
