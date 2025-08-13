@@ -1,0 +1,82 @@
+img {
+    max-width: 8%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+
+h1 {
+    color: #559b2d;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 28px;
+    font-style: italic;
+    color: #3e3d3d;
+}
+
+div {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    color: #2e6f31;
+    margin-bottom: 30px;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bold;
+    border: 1px solid rgb(81, 83, 84);
+    background-color: rgba(78, 116, 150, 0.899);
+    padding: 20px 20px;
+    border-radius: 55px;
+    display: block;         /* Satırı tamamen kaplasın */
+    margin: 80px auto 0;    /* Üstten 30px boşluk ve ortala */
+    width: fit-content;     /* Sadece içeriği kadar genişlik */
+    cursor: pointer; 
+    }
+
+a:hover {
+        background-color:rgba(112, 153, 188, 0.605);
+}
+
+
+
+@media screen and (max-width: 768px) {
+   img {
+        max-width: 60%;
+        height: auto;
+        
+    }
+   
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 28px;
+    }
+
+    a {
+        font-size: 28px;
+    }
+    div {
+        font-size: 2rem;
+    }
+
+}

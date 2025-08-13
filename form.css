@@ -1,0 +1,328 @@
+/* İlk form div düzeni */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  width: 50%; /* Form satırının genişliği */
+  justify-content: space-between; /* İçerikleri yatayda dağıt */
+}
+
+.header-form{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px; 
+  flex-direction: row;
+  display: flex;
+  border: 1px solid #989595;
+  padding: 20px;
+  background-color: #beddc1a5; /* Açık gri arka plan */
+  align-items: center;
+  justify-content: space-between; /* İçerikleri yatayda dağıt */
+  margin-bottom: 10px;
+  box-sizing: border-box; 
+  font-size: 20px; /* Yazı boyutu */
+
+}
+
+.form-group-child {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #080808;
+  border-radius: 4px;
+  font-size: 19px;
+  box-sizing: border-box;
+  padding: 4px;
+  border:1px solid #535050;
+}
+
+td input{
+    width: 95%;
+    padding: 4px;
+    border: 1px solid #6b6868;
+    border-radius: 4px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Temiz, sade font */
+  background-color: #ffffff; /* Açık gri arka plan */
+}
+
+h1, h3 {
+  text-align: center;
+  color: hwb(35 31% 45% / 0.805);
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: 16px;
+  color: #6b6060; 
+}
+
+input[type="submit"] {
+  background-color: #2e6f31; /* Yeşil gönder butonu */
+  color: #ece6e6;
+  border: none;
+  height: 60px;
+  width: 32%;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #729c74; /* Hover rengi */
+  cursor: pointer;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px auto; 
+}
+
+table, th, td {
+  border: 1px solid #555555;
+}
+
+th, td {
+  padding: 9px;
+}
+th {
+  background-color: #abd7b0; /* Açık yeşil */
+  text-align: center;
+  color: #ffffff; /* Koyu gri yazı */
+}
+td {
+  background-color: #f2f2f2; /* Açık gri arka plan */
+  color: #333333; /* Koyu gri yazı */
+  text-align: center;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px; /* Checkbox grubu için alt boşluk */
+  margin-left: 5px;
+  font-size: 20px; /* Yazı boyutu */
+  color: #ffffff; /* Yazı rengi */
+  padding: 15px; /* İçerik boşluğu */
+  background-color: #7fab81c8; 
+  border-radius: 60px; 
+  border: 1px solid #44564381;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer; /* Üzerine gelindiğinde el işareti */
+  transition: background-color 0.3s ease; /* Arka plan rengi geçiş efekti */
+
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 60px;
+  margin: 0;
+  vertical-align: middle;
+  cursor: pointer;
+
+  .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  border: 1px solid #6f6f6f;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif; /* Temiz, sade font */
+  color: #434141; /* Yazı rengi */
+  margin-bottom: 25px; /* Alt boşluk */
+}
+.row-flex {
+  display: flex;
+  align-items: stretch; /* Boydan hizalama */
+  gap: 30px; /* İki div arası boşluk */
+}
+
+#KontrolYapanAdı {
+  width: 70ch;
+  margin: 0 auto;
+  padding: 10px;
+
+}
+
+p {
+  font-size: 20px; 
+  color: #732020; 
+  text-align: center;
+  margin-top: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Açıklama sütununu genişlet, Puan sütununu daralt */
+table td:nth-child(4),
+table th:nth-child(4) {
+  width: 40%;
+
+}
+
+table td:nth-child(5),
+table th:nth-child(5) {
+  width: 10%;
+
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+color: #474343;
+
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px; /* Üst boşluk, alt boşluk */
+  width: 260px; /* Logo genişliği */
+  height: auto; /* Orantılı yükseklik */
+  
+}
+
+.altgrup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin : 0 auto;
+  width: 90%;
+
+}
+
+@media (max-width: 545px) {
+  html, body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .container, .header-form {
+    width: 99%;
+    min-width: 0;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    width: 90px;
+    margin: 0 auto 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem !important;
+    margin: 10px 0 12px 0;
+  }
+
+  h3 {
+    font-size: 1rem !important;
+    margin: 8px 0 10px 0;
+  }
+
+  p {
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 20px;
+  }
+
+  .form-group {
+    flex-direction: column !important;
+    font-size: 15px;
+    padding: 8px;
+    gap: 8px;
+    align-items: stretch !important;
+  }
+
+  .form-group input,
+  .form-group-child input,
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    width: 100% !important;
+    font-size: 13px !important;
+    margin: 0 0 8px 0 !important;
+    padding: 7px !important;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    width: 100% !important;
+    font-size: 16px !important;
+    height: 40px !important;
+    margin: 12px 0 18px 0 !important;
+  }
+
+  table {
+    width: 100% !important;
+    font-size: 10px !important;
+    margin: 5px 0 !important;
+    box-sizing: border-box;
+    overflow-x: auto;
+    display: table;
+  }
+
+  th, td {
+    padding: 4px !important;
+    font-size: 12px !important;
+    white-space: normal;
+    text-align: center;
+  }
+
+  th {
+    font-size: 9px !important;
+    text-align: center;
+  }
+
+  .checkbox-group {
+    flex-direction: column !important;
+    font-size: 13px;
+    padding: 8px !important;
+    gap: 5px !important;
+    
+  }
+
+    .checkbox-group label {
+    font-size: 13px;
+    margin-right: 2px;
+    }
+
+  input[type="checkbox"] {
+    width: 20px !important;
+    height: 18px !important;
+  }
+
+  input[type="radio"] {
+    margin: 0 !important;
+  }
+}

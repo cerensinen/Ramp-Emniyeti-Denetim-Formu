@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Gönderildi.</title>
+    <link rel="stylesheet" href="tesekkur.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <img src="mektup.png" alt="Teşekkürler">
+</head>
+<body>
+    <h1>Formunuz Gönderildi.</h1>
+    <p>Yanıtlarınız kaydedilmiştir.</p>
+
+    <div >
+        Aldığınız Puan: <span id="toplamPuanGoster"></span>
+    </div>
+
+    <a href="form.html">Yeni form doldur!</a>
+
+    <script>
+        // SessionStorage'dan puanı al ve göster
+        var toplamPuan = sessionStorage.getItem("toplamPuan");
+        document.getElementById("toplamPuanGoster").textContent = toplamPuan !== null ? toplamPuan : "-";
+        sessionStorage.removeItem("toplamPuan");
+    </script>
+</body>
+</html>
